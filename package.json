@@ -8,6 +8,7 @@
     "start": "webpack serve --env mode=development --config ./webpack/webpack.config.ts",
     "dev": "webpack --env mode=development --config ./webpack/webpack.config.ts",
     "build": "webpack --env mode=production --config ./webpack/webpack.config.ts",
+    "prettier": "npx prettier --write src/",
     "update:check": "npx npm-check-updates",
     "update:patch": "ncu -u --target patch",
     "update:minor": "ncu -u --target minor"
@@ -33,6 +34,7 @@
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
+    "prettier": "^3.5.2",
     "react-refresh": "^0.16.0",
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",
