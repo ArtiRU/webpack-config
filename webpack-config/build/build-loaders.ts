@@ -20,7 +20,8 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
                 options: {
                     import: true,
                     modules: {
-                        localIdentName: isDev ? '[path][name]__[contenthash]' : '[hash:base64:8]'
+                        localIdentName: isDev ? '[path][name]__[contenthash]' : '[hash:base64:8]',
+                        namedExport: false
                     }
                 },
             },

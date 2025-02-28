@@ -1,6 +1,6 @@
 import {FC, useState} from 'react'
-import styles from '@/components/about.module.scss'
-import {Link, Outlet} from 'react-router-dom'
+import styles from './components/about.module.scss'
+import {Link} from 'react-router-dom'
 import image from '@/assets/images/img1.png';
 import Temperature from '@/assets/images/temperature.svg';
 
@@ -27,8 +27,7 @@ const App: FC<AppProps> = () => {
             <img src={image} alt="123" width={100} height={100}/>
             <Temperature width={200} height={200} style={{color: 'yellow'}}/>
         </div>
-        <Outlet/>
-    </div>;
+    </div>
 }
 
 export default App;
