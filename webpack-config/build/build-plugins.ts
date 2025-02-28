@@ -35,10 +35,5 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
         }))
     }
 
-    console.log('before', plugins)
-    console.log('after', plugins.filter(Boolean))
-
-
-
     return plugins.filter(Boolean)
 }
