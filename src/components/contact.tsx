@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
 interface ContactProps {}
 
 const Contact: FC<ContactProps> = () => {
-    return <div>Contact</div>
-}
+  return <div>Contact</div>;
+};
 
-export default Contact
+export default Contact;

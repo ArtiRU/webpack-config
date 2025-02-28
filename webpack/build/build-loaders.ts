@@ -1,93 +1,87 @@
-import {BuildOptions} from "../types/build-options";
-import {ModuleOptions} from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { BuildOptions } from '../types/build-options';
+import { ModuleOptions } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
-    const isDev = options.mode === 'development';
+  const isDev = options.mode === 'development';
 
-    const plugins = [];
+  const plugins = [];
 
-    if (isDev) {
+  if (isDev) {
+  }
 
-    }
+  const sassLoader = {
+    test: /\.s[ac]ss$/i,
+    use: [
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          import: true,
+          modules: {
+            localIdentName: isDev ? '[path][name]__[contenthash]' : '[hash:base64:8]',
+            namedExport: false,
+          },
+        },
+      },
+      'sass-loader',
+    ],
+    exclude: /node_modules/,
+  };
 
-    const sassLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+  const babelLoader = {
+    test: /\.(ts|js)x?$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-typescript',
+          [
+            '@babel/preset-react',
             {
-                loader: "css-loader",
-                options: {
-                    import: true,
-                    modules: {
-                        localIdentName: isDev ? '[path][name]__[contenthash]' : '[hash:base64:8]',
-                        namedExport: false
-                    }
-                },
+              runtime: 'automatic',
             },
-            "sass-loader",
+          ],
         ],
-        exclude: /node_modules/
-    }
+      },
+    },
+  };
 
-    const babelLoader = {
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        use: {
-            loader: "babel-loader",
-            options: {
-                presets: [
-                    '@babel/preset-env',
-                    "@babel/preset-typescript",
-                    [
-                        "@babel/preset-react",
-                        {
-                            runtime: 'automatic'
-                        }
-                    ]
-                ]
-            }
-        }
-    }
+  const tsLoader = {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/,
+  };
 
-    const tsLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    }
+  const assetLoader = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  };
 
-    const assetLoader = {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-    }
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          svgoConfig: {
+            plugins: [
+              {
+                name: 'convertColors',
+                params: {
+                  currentColor: true,
+                },
+              },
+            ],
+          },
+          icon: true,
+        },
+      },
+    ],
+  };
 
-    const svgLoader = {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        use: [
-            {
-                loader: '@svgr/webpack',
-                options: {
-                    svgoConfig: {
-                        plugins: [
-                            {
-                                name: 'convertColors',
-                                params: {
-                                    currentColor: true,
-                                }
-                            }
-                        ]
-                    },
-                    icon: true
-                }
-            }
-        ],
-    }
-
-    return [
-        assetLoader,
-        svgLoader,
-        sassLoader,
-        babelLoader
-    ]
+  return [assetLoader, svgLoader, sassLoader, babelLoader];
 }

@@ -8,7 +8,7 @@
     "start": "webpack serve --env mode=development --config ./webpack/webpack.config.ts",
     "dev": "webpack --env mode=development --config ./webpack/webpack.config.ts",
     "build": "webpack --env mode=production --config ./webpack/webpack.config.ts",
-    "prettier": "npx prettier --write src/",
+    "prettier": "npx prettier --write ./",
     "update:check": "npx npm-check-updates",
     "update:patch": "ncu -u --target patch",
     "update:minor": "ncu -u --target minor"
