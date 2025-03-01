@@ -1,9 +1,10 @@
 import { BuildOptions } from '../types/build-options';
-import { Configuration } from 'webpack';
 import { buildDevServer } from './build-dev-server';
 import { buildLoaders } from './build-loaders';
 import { buildPlugins } from './build-plugins';
 import { buildResolvers } from './build-resolvers';
+
+import { Configuration } from 'webpack';
 
 export function buildWebpack(options: BuildOptions): Configuration {
   const isDev = options.mode === 'development';

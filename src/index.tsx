@@ -1,10 +1,12 @@
-import './assets/styles/global.scss';
-import { createRoot } from 'react-dom/client';
-import App from './app';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { StrictMode, Suspense } from 'react';
-import Contact from '@/components/contact';
-import { LazyAbout } from '@/components/lazy.about';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import App from './app';
+import './assets/styles/global.scss';
+
+import { LazyAbout } from '@/components/about/lazy.about';
+import Contact from '@/components/contact/contact';
 
 const domNode = document.querySelector('#root');
 

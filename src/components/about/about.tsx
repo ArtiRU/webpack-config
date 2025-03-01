@@ -1,5 +1,7 @@
 import { FC } from 'react';
+
 import styles from './about.module.scss';
+
 interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
