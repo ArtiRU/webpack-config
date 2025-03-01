@@ -19,6 +19,7 @@ import { Date } from '@/types/date';
 
 import { buttonHelper } from '@/components/button/utils/button-helper';
 import { getTimeFromDate } from '@/utils/time-date';
+import { render } from '@testing-library/react';
 
 export const buttonTests = [buttonTexts, buttonContent, contactTexts];
 export const arr: UserConfig[] = [];
@@ -35,7 +36,7 @@ const Button: FC = () => {
   useUnmount1(testFunc);
   useUnmount2(testFunc);
   return (
-    <div>
+    <div data-testid="button">
       <button>123</button>;
       <Title />
       <CatalogProducts />
@@ -45,3 +46,11 @@ const Button: FC = () => {
 };
 
 export default Button;
+
+describe(Button, () => {
+  it('should render correctly', () => {
+    const { getByTestId } = render(<Button />);
+
+    expect(getByTestId('button')).toBeInTheDocument();
+  });
+});
