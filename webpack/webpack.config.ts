@@ -1,8 +1,8 @@
 import { buildWebpack } from './build/build-webpack';
 import { ROOT_URL } from './consts/consts';
-import { BuildPaths } from './types/build-options';
-
 import path from 'path';
+
+import { BuildPaths } from './types/build-options';
 
 interface EnvVariables {
   mode?: 'development' | 'production';

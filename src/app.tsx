@@ -2,7 +2,6 @@ import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './components/about/about.module.scss';
-
 import image from '@/assets/images/img1.png';
 import Temperature from '@/assets/images/temperature.svg';
 

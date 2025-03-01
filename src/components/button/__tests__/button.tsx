@@ -9,10 +9,10 @@ import { normalizeSpaces } from '@/utils/helpers';
 
 import { useUnmount } from '@/hooks/use-unmount';
 import { useUnmount1 } from '@/pages/catalog/single-catalog/catalog-404/hooks/use-unmount1';
-import { useUnmount2 } from '@/pages/catalog/single-catalog/catalog-products/use-unmount2';
 
 import Title from '@/pages/basket/title/title';
 import CatalogProducts from '@/pages/catalog/single-catalog/catalog-products/catalog-products';
+import { useUnmount2 } from '@/pages/catalog/single-catalog/catalog-products/use-unmount2';
 
 import { ButtonType } from '@/components/button/types/button-types';
 import { Date } from '@/types/date';

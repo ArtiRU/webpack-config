@@ -1,6 +1,6 @@
-import { BuildOptions } from '../types/build-options';
-
 import path from 'path';
+
+import { BuildOptions } from '../types/build-options';
 
 export function buildResolvers(options: BuildOptions) {
   return {

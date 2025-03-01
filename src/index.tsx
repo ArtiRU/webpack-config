@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import App from './app';
 import './assets/styles/global.scss';
-
 import { LazyAbout } from '@/components/about/lazy.about';
 import Contact from '@/components/contact/contact';
 
