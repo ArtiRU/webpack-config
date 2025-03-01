@@ -21,6 +21,14 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         },
       },
       'sass-loader',
+      {
+        loader: 'postcss-loader',
+        options: {
+          postcssOptions: {
+            plugins: ['postcss-preset-env'],
+          },
+        },
+      },
     ],
     exclude: /node_modules/,
   };

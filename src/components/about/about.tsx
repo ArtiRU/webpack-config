@@ -1,12 +1,14 @@
 import { FC } from 'react';
 
 import styles from './about.module.scss';
+import Button from '@/components/button/button';
 
 interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
   return (
     <div className={styles.mt}>
+      <Button>about button</Button>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aspernatur autem ducimus est
         exercitationem harum illo in incidunt, inventore ipsum itaque iure nemo nihil obcaecati optio
