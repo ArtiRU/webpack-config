@@ -12,7 +12,8 @@
     "update:check": "npx npm-check-updates",
     "update:patch": "ncu -u --target patch",
     "update:minor": "ncu -u --target minor",
-    "test": "jest"
+    "test": "jest",
+    "commit": "cz"
   },
   "keywords": [],
   "author": "",
@@ -36,8 +37,10 @@
     "@types/webpack-dev-server": "^4.7.2",
     "babel-jest": "^29.7.0",
     "babel-loader": "^10.0.0",
+    "commitizen": "^4.3.1",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "cz-conventional-changelog": "^3.3.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.6.3",
     "identity-obj-proxy": "^3.0.0",
@@ -61,5 +64,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
