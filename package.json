@@ -8,12 +8,14 @@
     "start": "webpack serve --env mode=development --config ./webpack/webpack.config.ts",
     "dev": "webpack --env mode=development --config ./webpack/webpack.config.ts",
     "build": "webpack --env mode=production --config ./webpack/webpack.config.ts",
-    "prettier": "npx prettier --write ./",
     "update:check": "npx npm-check-updates",
     "update:patch": "ncu -u --target patch",
     "update:minor": "ncu -u --target minor",
     "test": "jest",
-    "commit": "cz"
+    "commit": "cz",
+    "lint": "npx eslint src/**/*.{ts,tsx,js,jsx,css,scss,json}",
+    "lint:fix": "eslint src/**/*.{ts,tsx,js,jsx,css,scss,json} --fix",
+    "format": "prettier --write src/**/*.{ts,tsx,js,jsx,css,scss,json}"
   },
   "keywords": [],
   "author": "",
@@ -58,13 +60,16 @@
     "style-loader": "^4.0.0",
     "ts-jest": "^29.2.6",
     "ts-loader": "^9.5.2",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
+    "typescript-eslint": "^8.25.0",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.2.0"

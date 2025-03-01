@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { render } from '@testing-library/react';
 
 import { buttonContent, buttonTexts } from '@/components/button/__mocks__/button';
@@ -21,8 +23,6 @@ export const button: ButtonType = {};
 export const btnHelp = buttonHelper();
 export const dateIso = normalizeSpaces('sd');
 export const time = getTimeFromDate('time');
-
-const testFunc = () => {};
 
 describe(Button, () => {
   it('should render correctly', () => {

@@ -1,11 +1,9 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import styles from './about.module.scss';
 import Button from '@/components/button/button';
 
-interface AboutProps {}
-
-const About: FC<AboutProps> = () => {
+const About: FC = () => {
   return (
     <div className={styles.mt}>
       <Button>about button</Button>

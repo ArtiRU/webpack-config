@@ -1,21 +1,14 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './components/about/about.module.scss';
 import image from '@/assets/images/img1.png';
 import Temperature from '@/assets/images/temperature.svg';
 
-interface AppProps {}
-
-function sum(a: number, b: number): number {
-  return a + b;
-}
-
-const App: FC<AppProps> = () => {
+const App: FC = () => {
   const [count, setCount] = useState<number>(0);
 
   const increment = () => setCount(prev => prev + 1);
-  const sumAB = sum(2, 3);
 
   return (
     <div>
