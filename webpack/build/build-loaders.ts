@@ -59,11 +59,13 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const assetLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,
     type: 'asset/resource',
+    exclude: /node_modules/,
   };
 
   const svgLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
+    exclude: /node_modules/,
     use: [
       {
         loader: '@svgr/webpack',
