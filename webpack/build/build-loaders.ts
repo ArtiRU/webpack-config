@@ -6,11 +6,6 @@ import { BuildOptions } from '../types/build-options';
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const isDev = options.mode === 'development';
 
-  const plugins = [];
-
-  if (isDev) {
-  }
-
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -48,12 +43,6 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ],
       },
     },
-  };
-
-  const tsLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
   };
 
   const assetLoader = {

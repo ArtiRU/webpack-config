@@ -1,16 +1,17 @@
 import React, { FC } from 'react';
 
+import { render } from '@testing-library/react';
+
 import { buttonContent, buttonTexts } from '@/components/button/__mocks__/button';
 import { contactTexts } from '@/components/contact/__mocks__/contact';
+import { useUnmount } from '@/hooks/use-unmount';
 
 import { UserConfig } from '@/types/common';
 
 import { normalizeSpaces } from '@/utils/helpers';
 
-import { useUnmount } from '@/hooks/use-unmount';
-import { useUnmount1 } from '@/pages/catalog/single-catalog/catalog-404/hooks/use-unmount1';
-
 import Title from '@/pages/basket/title/title';
+import { useUnmount1 } from '@/pages/catalog/single-catalog/catalog-404/hooks/use-unmount1';
 import CatalogProducts from '@/pages/catalog/single-catalog/catalog-products/catalog-products';
 import { useUnmount2 } from '@/pages/catalog/single-catalog/catalog-products/use-unmount2';
 
@@ -19,7 +20,6 @@ import { Date } from '@/types/date';
 
 import { buttonHelper } from '@/components/button/utils/button-helper';
 import { getTimeFromDate } from '@/utils/time-date';
-import { render } from '@testing-library/react';
 
 export const buttonTests = [buttonTexts, buttonContent, contactTexts];
 export const arr: UserConfig[] = [];
